@@ -8,14 +8,13 @@ public class anim3 : MonoBehaviour
     
     bool canjump;
 
-    public Transform BallSpaun;
-    public GameObject ball;
+  
     
 
     // Start is called before the first frame update
     void Start()
     {
-        PlayerShooting();
+      
     }
 
     // Update is called once per frame
@@ -52,13 +51,7 @@ public class anim3 : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void PlayerShooting()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            Instantiate(ball, BallSpaun.position, BallSpaun.rotation);
-        }
-    }
+    
     [HideInInspector]
     public bool usingescalera;
 }

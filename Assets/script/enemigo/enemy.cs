@@ -42,5 +42,9 @@ public class enemy : MonoBehaviour
         {
             Debug.Log("player detected");
         }
+        if (col.gameObject.CompareTag("ball"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
