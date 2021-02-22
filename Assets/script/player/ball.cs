@@ -6,6 +6,9 @@ public class ball : MonoBehaviour
 {
     public Transform Firepoint;
     public GameObject fire;
+    public GameObject fire2;
+    public GameObject fire3;
+
     void Start()
     {
         
@@ -16,7 +19,18 @@ public class ball : MonoBehaviour
     {
      if (Input.GetKeyDown(KeyCode.C))
         {
-            Instantiate(fire, Firepoint.position, Quaternion.identity);
-        }   
+            Instantiate(fire, Firepoint.position,Firepoint.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            
+            Instantiate(fire2, Firepoint.position, Firepoint.rotation);
+        }
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+
+            Instantiate(fire3, Firepoint.position, Firepoint.rotation);
+        }
     }
 }
+    

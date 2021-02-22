@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemy : MonoBehaviour
+public class enemy2 : MonoBehaviour
 {
     public float maxSpeed = 2f;
     public float Speed = 2f;
-    public static float vidamaxima = 3;
-    float vidamaxima1 = vidamaxima;
-   
+    public Transform Firepoint;
+    public GameObject fire;
+    private float tiempo;
+    public static float vidamaxima = 6;
+    float vida = vidamaxima;
 
-     
 
     private Rigidbody2D rb2d;
-        
     // Start is called before the first frame update
     void Start()
     {
@@ -35,33 +35,37 @@ public class enemy : MonoBehaviour
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-         else if (Speed < 0)
+        else if (Speed < 0)
         {
             transform.localScale = new Vector3(1f, 1f, 1f);
         }
-        
-        
-
-
+        tiempo += Time.deltaTime;
+        if (tiempo >= 1f)
+        {
+            Instantiate(fire, Firepoint.position, Firepoint.rotation);
+            tiempo = 0;
+        }
     }
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player"))
         {
-            Debug.Log("player detected");
+            Instantiate(fire, Firepoint.position, Firepoint.rotation);
         }
         if (col.gameObject.CompareTag("ball"))
         {
-            vidamaxima1--;
-                                      
-                
-                    Debug.Log(vidamaxima1);
-                    if (vidamaxima1 == 0)
-                    {
-                        Destroy(gameObject);
-                    }
-            
-            
+            vida--;
+
+
+            Debug.Log(vida);
+            if (vida == 0)
+            {
+                Destroy(gameObject);
+            }
+
         }
+
     }
 }
+
+

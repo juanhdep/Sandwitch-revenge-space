@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fire : MonoBehaviour
+public class ball2 : MonoBehaviour
 {
     private Rigidbody2D Myrb;
     public float Speed;
@@ -15,17 +15,9 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        Myrb.velocity = transform.right * Speed;
+        Myrb.gravityScale = 1;
         Destroy(gameObject, 2);
-        
-        
 
-        
-        
-            
-            
-        
     }
     void OnTriggerEnter2D(Collider2D col)
     {

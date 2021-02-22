@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fire : MonoBehaviour
+public class ball3 : MonoBehaviour
 {
+    // Start is called before the first frame update
     private Rigidbody2D Myrb;
     public float Speed;
     // Start is called before the first frame update
@@ -15,17 +16,9 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-        Myrb.velocity = transform.right * Speed;
+        Myrb.velocity = transform.up * Speed;
         Destroy(gameObject, 2);
-        
-        
 
-        
-        
-            
-            
-        
     }
     void OnTriggerEnter2D(Collider2D col)
     {

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - enemigo
   - ball
+  - ter
+  - ball2
+  - escalera
+  - elevador
   layers:
   - Default
   - TransparentFX

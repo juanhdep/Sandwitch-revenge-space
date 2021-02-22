@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sccamarafollow : MonoBehaviour
 {
@@ -14,8 +15,29 @@ public class sccamarafollow : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        float posX = follow.transform.position.x;
-        float posy = follow.transform.position.y;
-        transform.position = new Vector3(posX, posy, transform.position.z);
+        if (follow == true)
+        {
+            float posX = follow.transform.position.x;
+            float posy = follow.transform.position.y;
+            transform.position = new Vector3(posX, posy, transform.position.z);
+
+        }
+        if (follow == false)
+        {
+            RestartGame();
+        }
+        
+        
+        
+        
+
+        
+
+        
+    }
+    public void RestartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+
     }
 }
