@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - enemigo
+  - ball
+  - ter
+  - ball2
+  - escalera
+  - elevador
   layers:
   - Default
   - TransparentFX
@@ -13,9 +19,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - player
+  - enemigo
+  - ball
   - 
   - 
   - 
