@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class fire : MonoBehaviour
+public class fireenemy2 : MonoBehaviour
+
 {
     private Rigidbody2D Myrb;
     public float Speed;
@@ -15,22 +16,13 @@ public class fire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
         Myrb.velocity = transform.right * Speed;
         Destroy(gameObject, 2);
-        
-        
-
-        
-        
-            
-            
-        
     }
     void OnTriggerEnter2D(Collider2D col)
     {
 
-        if (col.gameObject.CompareTag("enemigo"))
+        if (col.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
         }
@@ -38,10 +30,6 @@ public class fire : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        if (col.gameObject.CompareTag("escudo"))
-        {
-            Destroy(gameObject);
-        }
+       
     }
-    }
-
+}

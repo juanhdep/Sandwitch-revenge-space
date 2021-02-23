@@ -61,6 +61,11 @@ public class anim3 : MonoBehaviour
             Destroy(gameObject);
             RestartGame();
         }
+        if (col.gameObject.CompareTag("escudo"))
+        {
+            Destroy(gameObject);
+            RestartGame();
+        }
 
     }
     public void RestartGame ()
